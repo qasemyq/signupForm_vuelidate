@@ -43,6 +43,7 @@
 
 <script>
 import { required, minLength, maxLength, alpha, email } from 'vuelidate/lib/validators'
+//
 
 export default {
     data(){
