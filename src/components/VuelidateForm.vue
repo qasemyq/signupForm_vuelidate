@@ -5,20 +5,17 @@
             <div>
             <label>Name</label> <br>
             <input type="text" v-model="name"> <br>
-            <!-- age name tush hichchi nabashe mikham -->
             <span v-if="!$v.name.required && $v.name.$dirty" class="error">Name is required!</span>
             <span v-if="!$v.name.alpha && $v.name.$dirty" class="error">Name is required!</span>
             </div>
             <div>
             <label>Email</label> <br>
             <input type="email" v-model="email"> <br>
-            <!-- age email tush hichchi nabashe mikham -->
             <span v-if="(!$v.email.required || !$v.email.email) && $v.email.$dirty" class="error">Valid email is required!</span>
             </div>
             <div>
             <label>Password</label> <br>
             <input type="password" v-model="password"> <br>
-            <!-- age email tush hichchi nabashe mikham -->
             <span v-if="!$v.password.required && $v.password.$dirty" class="error">Password is required!</span>
             <span v-if="(!$v.password.minLength || !$v.password.maxLength) && $v.password.$dirty" class="error">Password must be between 6 nad 12 characters</span>
             </div>
@@ -79,7 +76,6 @@ export default {
         submitForm(){
             this.$v.$touch();
             
-            // age invalid false bud 
             if(!this.$v.$invalid){
                 console.log(`Name: ${this.name}, Email: ${this.email}, Password: ${this.password}, Gender: ${this.gender}, AcceptTerms: ${this.acceptTerms}`)
             }
